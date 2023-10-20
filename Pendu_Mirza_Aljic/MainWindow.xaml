@@ -1,0 +1,118 @@
+﻿<Window x:Class="Pendu_Mirza_Aljic.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pendu_Mirza_Aljic"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+
+
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <!--<Button Grid.Row="0" Grid.Column="0" Name="TB_score" Content="Score :"/>
+        <Button Grid.Row="0" Grid.Column="1" Name="Nom_Jeu" Content="Hang Man"/>
+        <Button Grid.Row="0" gris-->
+
+        <!-- ********************************* Zone Title ********************************* -->
+        <Grid Grid.Row="0" Name="Gridtitle">
+            <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="200"/>
+                 <ColumnDefinition Width="*"/>
+                 <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="BTN_Start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"></Button>
+            <Label Grid.Column="1" Content="HANGMAN" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"></Label>
+            <Button Grid.Column="2" Name="BTN_Indice" Content="Indice"  FontSize="30"/>
+        </Grid>
+
+        <!-- ********************************* zone keyboard & image ********************************* -->
+        <Grid Grid.Row="1" Name="GridKeyboardImage">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
+
+            </Grid.ColumnDefinitions>
+
+            <!-- Zone pour crée le clavier -->
+            <Grid Grid.Column="0" Name="gridKeyboard">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Création des bouttons pour l'alphabet 1ere colonne -->
+                <Button Grid.Row="0" Grid.Column="0" Name="BTN_A" Content="A"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Name="BTN_B" Content="B"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Name="BTN_C" Content="C"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Name="BTN_D" Content="D"></Button>
+                <Button Grid.Row="0" Grid.Column="4" Name="BTN_E" Content="E"></Button>
+                <Button Grid.Row="0" Grid.Column="5" Name="BTN_F" Content="F"></Button>
+                <Button Grid.Row="0" Grid.Column="6" Name="BTN_G" Content="G"></Button>
+
+                <!-- Création des bouttons pour l'alphabet 2eme colonne -->
+                <Button Grid.Row="1" Grid.Column="0" Name="BTN_H" Content="H"></Button>
+                <Button Grid.Row="1" Grid.Column="1" Name="BTN_I" Content="I"></Button>
+                <Button Grid.Row="1" Grid.Column="2" Name="BTN_J" Content="J"></Button>
+                <Button Grid.Row="1" Grid.Column="3" Name="BTN_K" Content="K"></Button>
+                <Button Grid.Row="1" Grid.Column="4" Name="BTN_L" Content="L"></Button>
+                <Button Grid.Row="1" Grid.Column="5" Name="BTN_M" Content="M"></Button>
+                <Button Grid.Row="1" Grid.Column="6" Name="BTN_N" Content="N"></Button>
+
+                <!-- Création de la 3eme colonne pour l'alphabet -->
+                <Button Grid.Row="2" Grid.Column="0" Name="BTN_O" Content="O"></Button>
+                <Button Grid.Row="2" Grid.Column="1" Name="BTN_P" Content="P"></Button>
+                <Button Grid.Row="2" Grid.Column="2" Name="BTN_Q" Content="Q"></Button>
+                <Button Grid.Row="2" Grid.Column="3" Name="BTN_R" Content="R"></Button>
+                <Button Grid.Row="2" Grid.Column="4" Name="BTN_S" Content="S"></Button>
+                <Button Grid.Row="2" Grid.Column="5" Name="BTN_T" Content="T"></Button>
+                <Button Grid.Row="2" Grid.Column="6" Name="BTN_U" Content="U"></Button>
+
+                <!-- Création de la 3eme colonne -->
+                <Button Grid.Row="3" Grid.Column="1" Name="BTN_V" Content="V"></Button>
+                <Button Grid.Row="3" Grid.Column="2" Name="BTN_W" Content="W"></Button>
+                <Button Grid.Row="3" Grid.Column="3" Name="BTN_X" Content="X"></Button>
+                <Button Grid.Row="3" Grid.Column="4" Name="BTN_Y" Content="Y"></Button>
+                <Button Grid.Row="3" Grid.Column="5" Name="BTN_Z" Content="Z"></Button>
+
+
+            </Grid>
+        </Grid>
+        <!-- ********************************* zone Footer ********************************* -->
+        <Grid Grid.Row="3" Name="TimerMotVie">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Name="LB_Timer" Grid.Row="3" Grid.Column="0" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="100" Height="75" Content="" />
+            <TextBox Name="TB_Mot" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="75" FontSize="30" 
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Name="TB_Vie" Grid.Row="3" Grid.Column="2" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"/>
+         
+        </Grid>
+    </Grid>
+</Window>
