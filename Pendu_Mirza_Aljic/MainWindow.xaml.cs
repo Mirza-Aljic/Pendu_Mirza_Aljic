@@ -204,11 +204,6 @@ namespace Pendu_Mirza_Aljic
         private void BTN_Continue_Click(object sender, RoutedEventArgs e)
         {
             StartGame();
-            //ChangeMotSecret(); // Change le mot secret
-            //EnableAlphabetButtons(); // Active les boutons du clavier
-            //TB_Mot.Text = new string('*', motSecret.Length); // Réinitialise l'affichage du mot
-            //vies = 7; // Réinitialisation du nombre de vies à 7
-            //TB_Vie.Text = vies.ToString(); // Affichage du nombre de vies
 
         }
 
