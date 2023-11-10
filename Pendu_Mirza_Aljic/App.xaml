@@ -4,23 +4,15 @@
              xmlns:local="clr-namespace:Pendu_Mirza_Aljic"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!--<Style TargetType="Button">
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="TextBlock.TextAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>-->
-           
-        
+        <!-- Début des ressources partagées -->
 
+        <!-- Style personnalisé pour les lettres du jeu de pendu -->
+        <Style x:Key="LetterStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="Background" Value="LightGray"/> 
+        </Style>
 
-
-
-
+        <!-- Fin des ressources partagées -->
     </Application.Resources>
 </Application>

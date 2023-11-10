@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
+    <Window.Resources>
+        <Style x:Key="LetterStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="Foreground" Value="#5D605D"/>
+            <Setter Property="Background" Value="#F4A261"/>
+        </Style>
+
+        <Style x:Key="OPTION" TargetType="Button" >
+            <Setter Property="FontSize" Value="35"/>
+            <Setter Property="Foreground" Value="#2E282A"/>
+            <Setter Property="Background" Value="#F2CC8F"/>
+        </Style>
+
+        <Style x:Key="VIE" TargetType="TextBox">
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Foreground" Value="#293145"/>
+            <Setter Property="Background" Value="#D96459"/>
+        </Style>
+
+        <Style x:Key="TITRE" TargetType="Label">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="#BE4F5D"/>
+            <Setter Property="Background" Value="#6F3F4E"/>
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+
+        <Style x:Key="GRID" TargetType="Grid">
+            <Setter Property="Background" Value="#E6A6A2"/>
+        </Style>
+
+    </Window.Resources>
     <Grid>
 
 
@@ -25,20 +56,21 @@
         <Button Grid.Row="0" gris-->
 
         <!-- ********************************* Zone Title ********************************* -->
-        <Grid Grid.Row="0" Name="Gridtitle">
+        <Grid Grid.Row="0" Name="Gridtitle" Style="{StaticResource GRID}">
             <Grid.ColumnDefinitions>
                  <ColumnDefinition Width="200"/>
                  <ColumnDefinition Width="*"/>
                  <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
-
-            <Button Grid.Column="0" x:Name="BTN_Start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40"></Button>
-            <Label Grid.Column="1" Content="HANGMAN" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25"></Label>
-            <Button Grid.Column="2" Name="BTN_Indice" Content="Indice"  FontSize="30"/>
+            
+            
+            <Button Grid.Column="0" x:Name="BTN_Start" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60" Style="{StaticResource OPTION}"></Button>
+            <Label Grid.Column="1" Content="HANGMAN" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource TITRE}"></Label>
+            <Button Grid.Column="2" Name="BTN_Indice" Content="Indice" FontSize="30" Click="BTN_Indice_Click" Style="{StaticResource OPTION}"/>
         </Grid>
 
         <!-- ********************************* zone keyboard & image ********************************* -->
-        <Grid Grid.Row="1" Name="GridKeyboardImage">
+        <Grid Grid.Row="1" Name="GridKeyboardImage" Style="{StaticResource GRID}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="300"/>
@@ -64,55 +96,61 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <!-- Création des bouttons pour l'alphabet 1ere colonne -->
-                <Button Grid.Row="0" Grid.Column="0" Name="BTN_A" Content="A"></Button>
-                <Button Grid.Row="0" Grid.Column="1" Name="BTN_B" Content="B"></Button>
-                <Button Grid.Row="0" Grid.Column="2" Name="BTN_C" Content="C"></Button>
-                <Button Grid.Row="0" Grid.Column="3" Name="BTN_D" Content="D"></Button>
-                <Button Grid.Row="0" Grid.Column="4" Name="BTN_E" Content="E"></Button>
-                <Button Grid.Row="0" Grid.Column="5" Name="BTN_F" Content="F"></Button>
-                <Button Grid.Row="0" Grid.Column="6" Name="BTN_G" Content="G"></Button>
+                <Button Grid.Row="0" Grid.Column="0" Name="BTN_A" Content="A" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Name="BTN_B" Content="B" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="2" Name="BTN_C" Content="C" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Name="BTN_D" Content="D" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="4" Name="BTN_E" Content="E" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="5" Name="BTN_F" Content="F" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="0" Grid.Column="6" Name="BTN_G" Content="G" Style="{StaticResource LetterStyle}"></Button>
 
                 <!-- Création des bouttons pour l'alphabet 2eme colonne -->
-                <Button Grid.Row="1" Grid.Column="0" Name="BTN_H" Content="H"></Button>
-                <Button Grid.Row="1" Grid.Column="1" Name="BTN_I" Content="I"></Button>
-                <Button Grid.Row="1" Grid.Column="2" Name="BTN_J" Content="J"></Button>
-                <Button Grid.Row="1" Grid.Column="3" Name="BTN_K" Content="K"></Button>
-                <Button Grid.Row="1" Grid.Column="4" Name="BTN_L" Content="L"></Button>
-                <Button Grid.Row="1" Grid.Column="5" Name="BTN_M" Content="M"></Button>
-                <Button Grid.Row="1" Grid.Column="6" Name="BTN_N" Content="N"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Name="BTN_H" Content="H" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="1" Name="BTN_I" Content="I" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="2" Name="BTN_J" Content="J" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="3" Name="BTN_K" Content="K" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="4" Name="BTN_L" Content="L" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="5" Name="BTN_M" Content="M" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="1" Grid.Column="6" Name="BTN_N" Content="N" Style="{StaticResource LetterStyle}"></Button>
 
                 <!-- Création de la 3eme colonne pour l'alphabet -->
-                <Button Grid.Row="2" Grid.Column="0" Name="BTN_O" Content="O"></Button>
-                <Button Grid.Row="2" Grid.Column="1" Name="BTN_P" Content="P"></Button>
-                <Button Grid.Row="2" Grid.Column="2" Name="BTN_Q" Content="Q"></Button>
-                <Button Grid.Row="2" Grid.Column="3" Name="BTN_R" Content="R"></Button>
-                <Button Grid.Row="2" Grid.Column="4" Name="BTN_S" Content="S"></Button>
-                <Button Grid.Row="2" Grid.Column="5" Name="BTN_T" Content="T"></Button>
-                <Button Grid.Row="2" Grid.Column="6" Name="BTN_U" Content="U"></Button>
+                <Button Grid.Row="2" Grid.Column="0" Name="BTN_O" Content="O" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="1" Name="BTN_P" Content="P" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="2" Name="BTN_Q" Content="Q" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="3" Name="BTN_R" Content="R" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="4" Name="BTN_S" Content="S" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="5" Name="BTN_T" Content="T" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="2" Grid.Column="6" Name="BTN_U" Content="U" Style="{StaticResource LetterStyle}"></Button>
 
                 <!-- Création de la 3eme colonne -->
-                <Button Grid.Row="3" Grid.Column="1" Name="BTN_V" Content="V"></Button>
-                <Button Grid.Row="3" Grid.Column="2" Name="BTN_W" Content="W"></Button>
-                <Button Grid.Row="3" Grid.Column="3" Name="BTN_X" Content="X"></Button>
-                <Button Grid.Row="3" Grid.Column="4" Name="BTN_Y" Content="Y"></Button>
-                <Button Grid.Row="3" Grid.Column="5" Name="BTN_Z" Content="Z"></Button>
-
-
+                <Button Grid.Row="3" Grid.Column="1" Name="BTN_V" Content="V" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="3" Grid.Column="2" Name="BTN_W" Content="W" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="3" Grid.Column="3" Name="BTN_X" Content="X" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="3" Grid.Column="4" Name="BTN_Y" Content="Y" Style="{StaticResource LetterStyle}"></Button>
+                <Button Grid.Row="3" Grid.Column="5" Name="BTN_Z" Content="Z" Style="{StaticResource LetterStyle}"></Button>
             </Grid>
+            
+            <!-- Emplacement pour afficher l'image -->
+            <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image x:Name="Image" Width="200" Height="200"/>
+            </Grid>
+
         </Grid>
         <!-- ********************************* zone Footer ********************************* -->
-        <Grid Grid.Row="3" Name="TimerMotVie">
+        <Grid Grid.Row="3" Name="TimerMotVie" Style="{StaticResource GRID}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="200"/>
             </Grid.ColumnDefinitions>
 
-            <Label Name="LB_Timer" Grid.Row="3" Grid.Column="0" FontSize="100" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="100" Height="75" Content="" />
-            <TextBox Name="TB_Mot" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="75" FontSize="30" 
-                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <TextBox Name="TB_Vie" Grid.Row="3" Grid.Column="2" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50"/>
-         
+            <Button Name="BTN_Continue" Grid.Column="0" Grid.Row="3" Content="Continuer" FontSize="30" Click="BTN_Continue_Click" Style="{StaticResource OPTION}"></Button>
+
+            <TextBox Name="TB_Mot" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="75"
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource VIE}"/>
+            <TextBox Name="TB_Vie" Grid.Row="3" Grid.Column="2" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Style="{StaticResource VIE}"/>
+
         </Grid>
+       
     </Grid>
 </Window>
